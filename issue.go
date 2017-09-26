@@ -827,6 +827,10 @@ func InitIssueWithMetaAndFields(metaProject *MetaProject, metaIssuetype *MetaIss
 			switch elemType {
 			case "component":
 				issueFields.Unknowns[jiraKey] = []Component{{Name: value}}
+                        case "option":
+                                issueFields.Unknowns[jiraKey] = []Option{{
+                                    Value: value,
+                                }}
 			default:
 				issueFields.Unknowns[jiraKey] = []string{value}
 			}
